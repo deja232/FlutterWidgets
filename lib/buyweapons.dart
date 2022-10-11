@@ -119,7 +119,7 @@ class _BuyweaponsState extends State<Buyweapons> {
                             context: context,
                             builder: ((((context) {
                               return AlertDialog(
-                                title: Text("Error!"),
+                                title: Text("There is an Error!"),
                                 content: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
@@ -132,7 +132,7 @@ class _BuyweaponsState extends State<Buyweapons> {
                             context: context,
                             builder: ((((context) {
                               return AlertDialog(
-                                title: Text("Success!"),
+                                title: Text("Successful !"),
                                 content: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
