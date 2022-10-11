@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widgets1/buyweapons.dart';
 import 'package:flutter_widgets1/home.dart';
 
 void main() {
@@ -10,6 +11,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: HomePage());
+    return MaterialApp(
+      home: HomePage(),
+      initialRoute: "/",
+      routes: {
+        Buyweapons.routeName: (context) => Buyweapons(),
+      },
+    );
   }
 }
