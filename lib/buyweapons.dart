@@ -20,15 +20,15 @@ class _BuyweaponsState extends State<Buyweapons> {
   final _loginKey = GlobalKey<FormState>();
   final ctrlName = TextEditingController();
   final ctrlEmail = TextEditingController();
-  final ctrlPhone = TextEditingController();
-  final ctrlCity = TextEditingController();
+  final ctrlPrice = TextEditingController();
+  final ctrlType = TextEditingController();
 
   @override
   void dispose() {
     ctrlName.dispose();
     ctrlEmail.dispose();
-    ctrlPhone.dispose();
-    ctrlCity.dispose();
+    ctrlPrice.dispose();
+    ctrlType.dispose();
     super.dispose();
   }
 
@@ -83,8 +83,9 @@ class _BuyweaponsState extends State<Buyweapons> {
                 TextFormField(
                   keyboardType: TextInputType.phone,
                   decoration: InputDecoration(
-                      labelText: "Phone", prefixIcon: Icon(Icons.phone)),
-                  controller: ctrlPhone,
+                      labelText: "Price",
+                      prefixIcon: Icon(Icons.money_off_outlined)),
+                  controller: ctrlPrice,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   validator: (value) {
                     return value.toString().isEmpty
@@ -97,8 +98,8 @@ class _BuyweaponsState extends State<Buyweapons> {
                 TextFormField(
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                      labelText: "City", prefixIcon: Icon(Icons.location_city)),
-                  controller: ctrlCity,
+                      labelText: "Type", prefixIcon: Icon(Icons.type_specimen)),
+                  controller: ctrlType,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   validator: (value) {
                     return value.toString().isEmpty
@@ -110,10 +111,10 @@ class _BuyweaponsState extends State<Buyweapons> {
                 SizedBox(height: 16),
                 ElevatedButton(
                     onPressed: () {
-                      if (ctrlCity.text.toString() == "" ||
+                      if (ctrlType.text.toString() == "" ||
                           ctrlEmail.text.toString() == "" ||
                           ctrlName.text.toString() == "" ||
-                          ctrlPhone.text.toString() == "") {
+                          ctrlPrice.text.toString() == "") {
                         showDialog(
                             context: context,
                             builder: ((((context) {
@@ -139,9 +140,10 @@ class _BuyweaponsState extends State<Buyweapons> {
                                           ctrlName.text.toString()),
                                       Text("Email: " +
                                           ctrlEmail.text.toString()),
-                                      Text("Phone: " +
-                                          ctrlPhone.text.toString()),
-                                      Text("City: " + ctrlCity.text.toString()),
+                                      Text("Price : " +
+                                          ctrlPrice.text.toString() +
+                                          " Credits"),
+                                      Text("Type: " + ctrlType.text.toString()),
                                       SizedBox(height: 16),
                                       ElevatedButton(
                                         onPressed: () {
